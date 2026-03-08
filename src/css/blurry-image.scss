@@ -1,0 +1,28 @@
+.background-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(180deg, #000 0%, rgba(0, 0, 0, 0) 30%, #000 75%);
+  opacity: 0.7;
+}
+// small image we load the actua image with js later
+.background-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: url('../static/images/customer-handshake-focus-p-30.webp') 50% /
+    cover no-repeat;
+}
+//write query for desktop
+@media (min-width: 900px) {
+  .background-img {
+    position: absolute;
+    background: lightgray url('../static/images/customer-handshake-p-500.webp')
+      50% / cover no-repeat;
+  }
+}

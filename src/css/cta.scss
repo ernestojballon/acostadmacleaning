@@ -1,0 +1,39 @@
+.shiny-button {
+  color: white;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  outline: none;
+  position: relative;
+  overflow: hidden;
+  transition: background-color 0.3s;
+}
+
+.shiny-button:hover {
+  // background-color: rgb(2, 5, 58); /* Darker shade when hovered */
+}
+
+.shiny-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -150%; /* Start offscreen to the left */
+  width: 150%; /* Sufficient width to cover the button during the animation */
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 100%
+  );
+  animation: shine 4s ease-in-out infinite;
+}
+
+@keyframes shine {
+  from {
+    left: -150%; /* Start offscreen to the left */
+  }
+  to {
+    left: 150%; /* Move the gradient across the button to offscreen on the right */
+  }
+}

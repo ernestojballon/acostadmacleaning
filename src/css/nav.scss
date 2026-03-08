@@ -1,0 +1,108 @@
+.logo,
+.menu,
+.hamburger-menu {
+  margin: 0.4rem;
+}
+.menu {
+  flex-direction: row;
+}
+.menu li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #333;
+}
+
+.hamburger-menu {
+  height: 24px;
+  display: none;
+  cursor: pointer;
+}
+
+.hamburger-menu .bar {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 5px auto;
+  padding-bottom: 0;
+  padding-right: 0;
+  font-size: 24px;
+  background-color: white;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+/* Transform first bar */
+.hamburger-menu.cross .bar:nth-child(1) {
+  background-color: #333;
+  width: 26px;
+  margin: 0;
+  transform: translate(0px, 12px) rotate(45deg);
+}
+
+/* Hide middle bar */
+.hamburger-menu.cross .bar:nth-child(2) {
+  width: 0;
+  margin: 0;
+  padding: 0;
+  height: 0;
+  -webkit-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+
+/* Transform last bar */
+.hamburger-menu.cross .bar:nth-child(3) {
+  background-color: #333;
+  width: 26px;
+  margin: 0;
+  transform: translate(0px, 10px) rotate(-45deg);
+}
+
+/* We apply this class when nav opens*/
+
+.header-fixed {
+  display: block;
+  position: fixed;
+  height: 100vh;
+  z-index: 999;
+  background: white;
+}
+.black-logo path {
+  fill: #333;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .menu {
+    visibility: hidden; /* Initially hidden */
+    position: absolute;
+    top: 60px;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    opacity: 0;
+    transform: translateY(-20px); /* Start above the final position */
+    transition:
+      visibility 0s linear 0.2s,
+      opacity 0.2s,
+      transform 0.2s;
+  }
+  .menu.is-active {
+    visibility: visible; /* Make visible */
+    opacity: 1;
+    transform: translateY(0); /* Move to final position */
+    transition-delay: 0s; /* Apply transition immediately */
+  }
+
+  .menu li {
+    margin: 15px 0;
+  }
+
+  .hamburger-menu {
+    display: block;
+  }
+}

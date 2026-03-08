@@ -1,0 +1,5 @@
+tailwind.config.js
+webpack.config.js
+postcss.config.js
+webpack/
+src/static/js/

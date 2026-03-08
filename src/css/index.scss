@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// @import 'nav.scss';
+// @import 'hero.scss';
+// // @import 'scroll-arrow.scss';
+// @import 'blurry-image.scss';
+@import 'checkbox.scss';
+// @import 'parallax.scss';
+// @import 'fonts.scss';
+// @import 'cta.scss';
+// @import 'mailchimpForm.scss';
+
+// declare variable
+:root {
+  --main-color: #0089d7;
+  --secondary-color: #0089d7;
+}
+@custom-media --sm: (width >= 640px);
+@custom-media --md: (width >= 768px);
+@custom-media --lg: (width >= 1024px);
+@custom-media --xl: (width >= 1280px);
+
+.grecaptcha-badge {
+  display: none !important;
+}
+.button:disabled {
+  background-color: #ccc; /* Gray out the button */
+  cursor: not-allowed;
+}
+
+.logo-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.shiny-logo {
+  width: 100%;
+  height: auto;
+  display: block; /* Ensures the image takes up the full container width */
+}
+
+.logo-container::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0) 49%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0) 51%
+  );
+  animation: shine 2s infinite ease-in;
+}
+
+@keyframes shine {
+  to {
+    transform: translateX(50%);
+  }
+}

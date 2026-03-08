@@ -1,0 +1,25 @@
+.background-mail-icons {
+  background-image: url('../static/images/email-bg.png');
+  background-position: center;
+}
+
+.email-section-content {
+  z-index: 2;
+}
+.mailchimp-button {
+  margin: 0 !important;
+  padding: 12px 24px;
+  background: #023e8a;
+  color: white;
+  border-radius: 0.5rem !important;
+  border: none;
+}
+#mc_embed_signup .indicates-required {
+  text-align: left !important;
+}
+
+#mce-responses,
+div.response {
+  margin: 0.5rem 0 0 0 !important;
+  padding: 0 !important;
+}
