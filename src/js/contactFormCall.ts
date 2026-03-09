@@ -51,7 +51,7 @@ const onSubmitContactForm = async (event: Event) => {
       token,
     };
     // return dummy answer that the form was successful submitted
-    return fetch('https://api.ernestoballon.com/contact', {
+    return fetch('https://api.ernestoballon.com/email/contact', {
       method: 'POST', // Specifies the request method
       headers: {
         'Content-Type': 'application/json', // Sets the content type header
