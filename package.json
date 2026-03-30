@@ -10,7 +10,7 @@
     "compress-js-bundle": "uglifyjs ./dist/bundle.js -o ./dist/bundle.js -c -m",
     "purge-css": "./scripts/purgecss.sh",
     "post-css": "postcss dist/css/*.css --use autoprefixer -d dist/css/ --no-map",
-    "optimize-dist": "npm-run-all --parallel compress-html compress-js-bundle purge-css post-css",
+    "optimize-dist": "npm-run-all purge-css post-css compress-html compress-js-bundle",
     "build": "webpack && npm run optimize-dist",
     "start": "nodemon --watch webpack.* --watch webpack --exec webpack-dev-server",
     "ngrok": "ngrok http http://localhost:3000",
